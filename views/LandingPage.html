@@ -8,7 +8,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <div class='backgroundArea'>
+        <div id='header'>
+            <nav>
+                <ul class='customNav'>
+                    <li>
+                        <span onclick="moveToProfile()">PROFILE</span>
+                    </li>
+                    <li>
+                        <span onclick="moveToSkills()">SKILLS</span>
+                    </li>
+                    <li>
+                        <span onclick="moveToRecords()">RECORDS</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class='backgroundArea' id='profileArea'>
             <div class='profileArea'>
                 <div id='profileImage'>
                     <img src='../images/me2.jpg'>
@@ -17,15 +32,17 @@
                     </div>
                 </div>
                 <div id='profileContent'>
-                    <p id='nameElem'>
-                        김정현 <span id='nameElemENG'>Kim JeongHyun</span>
-                    </p>
-                    <p id='devValueElem'>` To Be Motivated Developer `</p>
-                    <hr id='profileHR'>
-                    <span id='introElem'>
-                        <p id='intro1'>타인의 일상에서 가치를 공감하고,</p>
-                        <p id='intro2'>그것을 표현하는 웹 개발자가 목표입니다.</p>
-                    </span>
+                    <div id='profileMe'>
+                        <p id='nameElem'>
+                            김정현 <span id='nameElemENG'>Kim JeongHyun</span>
+                        </p>
+                        <p id='devValueElem'>` To Be Motivated Developer `</p>
+                        <hr id='profileHR'>
+                        <span id='introElem'>
+                            <p id='intro1'>타인이 느끼는 일상 속의 가치를 공감하고,</p>
+                            <p id='intro2'>그것을 표현하는 웹 개발자가 목표입니다.</p>
+                        </span>
+                    </div>
                     <div id='profileInfo'>
                         <table id='profileInfoTable'>
                             <tr id='tableCol'>
@@ -88,8 +105,8 @@
                     </div>
                 </div>
             </div>
-            <hr class='distHR'>
-            <div class='techStackArea'>
+            <hr class='distHR' id='distHR'>
+            <div class='techStackArea' id='techStackArea'>
                 <div class='techStackImage'>
                     <img src='../images/brain.png'>
                     <hr>
@@ -146,12 +163,136 @@
                     </div>
                 </div>
             </div>
+            <hr class='distHR2' id='distHR2'>
+            <div class='recordArea' id='recordArea'>
+                <div class='recordListContainer'>
+                    <div class='recordLeftList'>
+                        <div class='recordList'>
+                            <h2>2021</h2>
+                            <ul>
+                                <li>
+                                    <p>2021.10.20</p>
+                                    <span>WECODE 28th WeStudy</span>
+                                </li>
+                                <li>
+                                    <p>2021.07.10</p>
+                                    <span>Engineer Information Processing Certif Passed</span>
+                                </li>
+                                <li>
+                                    <p>2021.06.25</p>
+                                    <span>SQL Developer Certif Passed</span>
+                                </li>
+                                <li>
+                                    <p>2021.04.28</p>
+                                    <span>BOLLORE LOGISTICS KOREA Temp Help contract expired</span>
+                                </li>
+                                <li>
+                                    <p>2021.03.22</p>
+                                    <span>BOLLORE LOGISTICS KOREA Help Contracted </span>
+                                </li>
+                                <li>
+                                    <p>2021.03.14</p>
+                                    <span>TOEIC 915 Scored</span>
+                                </li>
+                                <li>
+                                    <p>2021.02.26</p>
+                                    <span>DHL Supply Chain Korea Leaved</span>
+                                </li>
+                                <li>
+                                    <p>2021.01.04</p>
+                                    <span>DHL Supply Chain Korea Contracted</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='recordList'>
+                            <h2>2020</h2>
+                            <ul>
+                                <li>
+                                    <p>2020.12.31</p>
+                                    <span>BOLLORE LOGISTICS KOREA Leaved</span>
+                                </li>
+                                <li>
+                                    <p>2020.02.21</p>
+                                    <span>Bachelor of Computer Science, University Of Seoul</span>
+                                </li>
+                                <li>
+                                    <p>2020.02.14</p>
+                                    <span>BOLLORE LOGISTICS KOREA Contracted</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='recordList'> 
+                            <h2>2019</h2>
+                            <ul>
+                                <li>
+                                    <p>2019.04.05</p>
+                                    <span>Linux Master 2nd Certif Passed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class='recordRightList'>
+                        <div class='recordList'>
+                            <h2>2018</h2>
+                            <ul>
+                                <li>
+                                    <p>2018.12.31</p>
+                                    <span>University Credit All Passed</span>
+                                </li>
+                                <li>
+                                    <p>2018.12.28</p>
+                                    <span>Analyze Data semi-Professional Certif Passed</span>
+                                </li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class='recordList'>
+                            <h2>2017</h2>
+                            <ul>
+                                <li>
+                                   <p>2017.02.08</p>
+                                   <span>Transfer to University Of Seoul</span>
+                                </li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class='recordList'>
+                            <h2>2016</h2>
+                            <ul>
+                                <li>
+                                    <p>2016.08.28</p>
+                                    <span>TOEIC 945 Scored</span>
+                                </li>
+                                <li>
+                                    <p>2016.03.24</p>
+                                    <span>Be discharged from military service</span>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class='recordList'>
+                            <h2>2013</h2>
+                            <ul>
+                                <li>
+                                    <p>2013.02.28</p>
+                                    <span>Admission to Hansung Univ. </span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src='../js/LandingJS.js'></script>
+    
 </html>
 
 
