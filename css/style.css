@@ -1,14 +1,36 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+table tr{
+    display:block;
+    float:left;
+}
+
+table th, td{
+    display:block;
+}
+
 .distHR{
-    margin-top:18vh;
+    margin-top:20vh;
     border-top:2px solid lightgrey;
     border-bottom:0;
-    width:950px;
-    float:right;
+    width:98%;
+    opacity:0;
 }
 
 @media screen and (max-width:1500px){
+    .backgroundArea{
+        height:1150px;
+    }
+
+    .profileArea{
+        height:500px;
+        margin-bottom:100px;
+    }
+
+    .techStackArea{
+        top:14vh;
+        height:650px;
+    }
 
     .profileArea #profileImage{
         margin:30px 30px 30px 100px;
@@ -19,9 +41,25 @@
         left:500px;
     }
 
+    .techStackArea .techStackImage img{
+        margin-left:567px;
+    }
+
 }
 
 @media screen and (min-width:1501px){
+    .backgroundArea{
+        height:1500px;
+    }
+
+    .profileArea{
+        height:600px;
+    }
+
+    .techStackArea{
+        top:14vh;
+        height:900px;
+    }
     .profileArea #profileImage{
         margin:30px 30px 30px 250px;
     }
@@ -34,12 +72,13 @@
     .distHR{
         width:1300px;
     }
+    .techStackArea .techStackImage img{
+        margin-left:795px;
+    }
 
 }
 
-.backgroundArea{
-    height:1200px;
-}
+
 
 .profileArea{
     position:relative;
@@ -48,7 +87,6 @@
     margin-right:15px;
     border-radius:30px;
     width:100%;
-    height:500px;
 }
 
 .profileArea #profileImage{
@@ -56,6 +94,7 @@
     width:300px;
     height:300px;
     display:inline-block;
+    opacity:0;
 }
 
 .profileArea #profileImage img{
@@ -81,6 +120,7 @@
     position:absolute;
     display:inline-block;
     font-family: 'Noto Sans KR', sans-serif;
+    opacity:0;
 }
 
 .profileArea #profileContent #nameElem{
@@ -116,11 +156,6 @@
     padding-left:10px;  
 }
 
-.profileArea #profileContent #profileInfo table tr{
-    display:block;
-    float:left;
-}
-
 .profileArea #profileContent #profileInfo table th{
     color:#fff;
 }
@@ -129,10 +164,18 @@
     margin-left:10px;
 }
 
-.profileArea #profileContent #profileInfo table th, td{
-    display:block;
+.profileArea #profileContent #profileInfo #profileInfoTable th{
     line-height: 35px;
 }
+
+.profileArea #profileContent #profileInfo #profileInfoTable #tableCol td{
+    line-height: 35px;
+}
+
+.profileArea #profileContent #profileInfo #profileInfoTable #tableInfoElem td{
+    line-height: 35px;
+}
+
 .profileArea #profileContent #profileInfo #tableCol > td{
     color:#fff;
 }
@@ -161,22 +204,65 @@
 
 .techStackArea{
     position:relative;
-    top:25vh;
-    height:650px;
     display:block;
 }
 
 
 .techStackArea .techStackImage{
     position:relative;
+    width:100%;
     display:block;
+    opacity:0;
 }
 
 .techStackArea .techStackImage img{
+    position:relative;
     width:300px;
     height:300px;
-    margin-left:40%;
     border-radius:300px;
+}
+
+.techStackArea .techStackImage hr{
+    width:50%;
+    border-top:2px solid lightgrey;
+    border-bottom:0;
+}
+
+.techStackArea .techStackBarContainer{
+    position:relative;
+    width:100%;
+    text-align: center;
+    
+}
+
+.techStackBarContainer #techStackBar{
+    width:100%;
+    padding-left:25%;
+}
+
+.techStackBarContainer #techStackBar #techStackTable{
+    width:100%;
+}
+
+.techStackBarContainer #techStackBar #techStackTable #techStackTableChild0{
+    text-align: center;
+    width:10%;
+}
+.techStackBarContainer #techStackBar #techStackTable #techStackTableChild1{
+    width:20%;
+}
+
+.techStackBarContainer #techStackBar #techStackTable #techStackTableChild2{
+    width:40%;
+}
+
+.techStackBarContainer #techStackBar #techStackTable tr th,td{
+    line-height: 50px;
+}
+
+.progress-bar{
+    border:1px solid #878787;
+    border-radius: 30px;
 }
 
 .linkArea{
