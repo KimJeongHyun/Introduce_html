@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 // Navbar functions
 
 const profileElem = document.getElementById('profileArea')
