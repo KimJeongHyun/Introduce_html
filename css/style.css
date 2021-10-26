@@ -1,5 +1,14 @@
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body{ 
+    -ms-overflow-style: none; 
+} 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
 table tr{
     display:block;
     float:left;
@@ -7,6 +16,67 @@ table tr{
 
 table th, td{
     display:block;
+}
+
+.rootDiv{
+    opacity:0;
+    display:none;
+}
+
+.loadingText{
+    position:relative;
+    display:block;
+    bottom:50px;
+    opacity: 0;
+}
+
+.loadingDotDiv{
+    position:relative;
+    bottom:50px;
+    font-size:1.2em;
+}
+
+.loadingDot1{
+    position:relative;
+    margin-left:10px;
+    margin-right:10px;
+    opacity: 0;
+}
+.loadingDot2{
+    position:relative;
+    margin-left:10px;
+    margin-right:10px;
+    opacity: 0;
+}
+.loadingDot3{
+    position:relative;
+    margin-left:10px;
+    margin-right:10px;
+    opacity: 0;
+}
+
+.loadingDiv{
+    position:relative;
+    top:30%;
+    text-align: center;
+}
+
+.circle_progress { transform: rotate(-90deg); margin:0; }
+.frame, .bar { fill: none; }
+.frame { stroke: #e6e6e6; }
+.bar {
+  stroke: #03c75a;
+  stroke-linecap: round;
+}
+
+.value{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:37%;
+    text-align: center;
+    line-height: 120px;
 }
 
 #header{
@@ -36,6 +106,10 @@ table th, td{
     margin-left:20px;
 }
 
+.customNav li span{
+    cursor:pointer;
+}
+
 .distHR{
     margin-top:20vh;
     border-top:2px solid lightgrey;
@@ -53,7 +127,7 @@ table th, td{
 
 @media screen and (max-width:1500px){
     .backgroundArea{
-        height:1800px;
+        height:2150px;
     }
 
     .profileArea{
@@ -68,7 +142,7 @@ table th, td{
 
     .recordArea{
         top:14vh;
-        height:650px;
+        height:950px;
     }
 
     .profileArea #profileImage{
@@ -89,11 +163,14 @@ table th, td{
     .recordArea .recordListContainer .recordRightList{
         padding-right:15%;
     }
+    .customScrollBarContainer {
+        height:630px;
+    }
 }
 
 @media screen and (min-width:1501px){
     .backgroundArea{
-        height:2400px;
+        height:2500px;
     }
 
     .profileArea{
@@ -130,6 +207,9 @@ table th, td{
     }
     .recordArea .recordListContainer .recordRightList{
         padding-right:30%;
+    }
+    .customScrollBarContainer {
+        height:870px;
     }
 }
 
@@ -371,4 +451,104 @@ table th, td{
 .recordList ul li p{
     margin-bottom:0;
     font-weight: 500;
+}
+
+.distHR3{
+    margin-top:20vh;
+    border-top:2px solid lightgrey;
+    border-bottom:0;
+    width:98%;
+}
+
+.openFooterContainer{
+    position:relative;
+}
+
+.openFooter{
+    position:absolute;
+    left:48%;
+    top:15px;
+    font-size:2em;
+    height:100px;
+    transition:0.5s ease-in-out;
+}
+
+.openFooter #openArrow{
+    cursor:pointer;
+}
+
+.openFooterText{
+    position:absolute;
+    left:51%;
+    top:15px;
+    opacity:0;
+    font-size:1.5em;
+    transition:0.5s ease-in-out;
+}
+
+.footer{
+    position:relative;
+    top:150px;
+    opacity:1;
+    display:none;
+    text-align: center;
+    transition:0.5s ease-in-out;
+}
+
+.footer .footerContent{
+    margin-top:30px;
+}
+
+.footer .footerContent hr{
+    width:30%;
+}
+
+.footer .footerContent img{
+    width:30px;
+    height:30px;
+    display:inline;
+}
+
+.footer .footerContent span a{
+    margin-left:10px;
+    text-decoration: none;
+}
+
+.footer #closeArrow{
+    font-size:2em;
+    cursor:pointer;
+}
+
+.topBtn{
+    position:fixed;
+    top:80%;
+    left:92%;
+    opacity:0;
+    display:none;
+}
+
+#topArrow{
+    z-index: 1000;
+    font-size:5em;
+    cursor:pointer;
+}
+
+.customScrollBarWrapping{
+    position: fixed;
+    top:6%;
+    left:99.5%;
+    right:0;
+    opacity:0;
+    z-index:1000;
+}
+
+.customScrollBarContainer {
+    width: 5px;
+    background-color: lightgray; 
+}
+
+.customScrollBar {
+    height:11.1%;
+    width: 100%;
+    background-color:#878787;
 }

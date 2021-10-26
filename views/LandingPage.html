@@ -6,293 +6,340 @@
             JH's Profile
         </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        
     </head>
     <body>
-        <div id='header'>
-            <nav>
-                <ul class='customNav'>
-                    <li>
-                        <span onclick="moveToProfile()">PROFILE</span>
-                    </li>
-                    <li>
-                        <span onclick="moveToSkills()">SKILLS</span>
-                    </li>
-                    <li>
-                        <span onclick="moveToRecords()">RECORDS</span>
-                    </li>
-                </ul>
-            </nav>
+        <div class='loadingDiv'>
+            <h2 class='loadingText'>Loading</h2>
+            <div class='loadingDotDiv'>
+                <span class='loadingDot1'>.</span><span class='loadingDot2'>.</span><span class='loadingDot3'>.</span>
+            </div>
+            <svg class='circle_progress' width='120' height='120' viewBox='0 0 120 120'>
+                <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
+                <circle class="bar" cx="60" cy="60" r="54" stroke-width="12" />
+                <strong class='value'>0%</strong>
+            </svg>
         </div>
-        <div class='backgroundArea' id='profileArea'>
-            <div class='profileArea'>
-                <div id='profileImage'>
-                    <img src='../images/me2.jpg'>
-                    <div id='shadowCircle'>
-
+        <div class='rootDiv'>
+            <div id='header'>
+                <nav>
+                    <ul class='customNav'>
+                        <li>
+                            <span onclick="moveToProfile()">PROFILE</span>
+                        </li>
+                        <li>
+                            <span onclick="moveToSkills()">SKILLS</span>
+                        </li>
+                        <li>
+                            <span onclick="moveToRecords()">RECORDS</span>
+                        </li>
+                        <li>
+                            <span onclick="refresh()">REFRESH</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class='backgroundArea' id='profileArea'>
+                <div class='profileArea'>
+                    <div id='profileImage'>
+                        <img src='../images/me2.jpg'>
+                        <div id='shadowCircle'>
+    
+                        </div>
+                    </div>
+                    <div id='profileContent'>
+                        <div id='profileMe'>
+                            <p id='nameElem'>
+                                김정현 <span id='nameElemENG'>Kim JeongHyun</span>
+                            </p>
+                            <p id='devValueElem'>` To Be Motivated Developer `</p>
+                            <hr id='profileHR'>
+                            <span id='introElem'>
+                                <p id='intro1'>타인이 느끼는 일상 속의 가치를 공감하고,</p>
+                                <p id='intro2'>그것을 표현하는 웹 개발자가 목표입니다.</p>
+                            </span>
+                        </div>
+                        <div id='profileInfo'>
+                            <table id='profileInfoTable'>
+                                <tr id='tableCol'>
+                                    <th>
+                                        E-MAIL
+                                    </th>
+                                    <th>
+                                        KAKAO_ID
+                                    </th>
+                                    <th>
+                                        INSTAGRAM
+                                    </th>
+                                    <th>
+                                        BLOG
+                                    </th>
+                                </tr>
+                                <tr id='tableCol'>
+                                    <td>
+                                        || 
+                                    </td>
+                                    <td>
+                                        || 
+                                    </td>
+                                    <td>
+                                        || 
+                                    </td>
+                                    <td>
+                                        || 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src='../images/daum.png'>
+                                    </td>
+                                    <td>
+                                       <img src='../images/kakaotalk.png'>
+                                    </td>
+                                    <td>
+                                        <img src='../images/인스타그램+로고.PNG'>
+                                    </td>
+                                    <td>
+                                       <img src='../images/velogLogo.jpg'> 
+                                    </td>
+                                </tr>
+                                <tr id='tableinfoElem'>
+                                    <td>
+                                        ptr1129@hanmail.net 
+                                    </td>
+                                    <td>
+                                        ptr1129
+                                    </td>
+                                    <td>
+                                        <a href='https://www.instagram.com/lililiil_jh/'>lililiil_jh</a>
+                                    </td>
+                                    <td>
+                                        <a href='https://velog.io/@leitmotif/'>velog.io/@leitmotif</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div id='profileContent'>
-                    <div id='profileMe'>
-                        <p id='nameElem'>
-                            김정현 <span id='nameElemENG'>Kim JeongHyun</span>
-                        </p>
-                        <p id='devValueElem'>` To Be Motivated Developer `</p>
-                        <hr id='profileHR'>
-                        <span id='introElem'>
-                            <p id='intro1'>타인이 느끼는 일상 속의 가치를 공감하고,</p>
-                            <p id='intro2'>그것을 표현하는 웹 개발자가 목표입니다.</p>
-                        </span>
+                <hr class='distHR' id='distHR'>
+                <div class='techStackArea' id='techStackArea'>
+                    <div class='techStackImage'>
+                        <img src='../images/brain.png'>
+                        <hr>
                     </div>
-                    <div id='profileInfo'>
-                        <table id='profileInfoTable'>
-                            <tr id='tableCol'>
-                                <th>
-                                    E-MAIL
-                                </th>
-                                <th>
-                                    KAKAO_ID
-                                </th>
-                                <th>
-                                    INSTAGRAM
-                                </th>
-                                <th>
-                                    BLOG
-                                </th>
-                            </tr>
-                            <tr id='tableCol'>
-                                <td>
-                                    || 
-                                </td>
-                                <td>
-                                    || 
-                                </td>
-                                <td>
-                                    || 
-                                </td>
-                                <td>
-                                    || 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src='../images/daum.png'>
-                                </td>
-                                <td>
-                                   <img src='../images/kakaotalk.png'>
-                                </td>
-                                <td>
-                                    <img src='../images/인스타그램+로고.PNG'>
-                                </td>
-                                <td>
-                                   <img src='../images/velogLogo.jpg'> 
-                                </td>
-                            </tr>
-                            <tr id='tableinfoElem'>
-                                <td>
-                                    ptr1129@hanmail.net 
-                                </td>
-                                <td>
-                                    ptr1129
-                                </td>
-                                <td>
-                                    <a href='https://www.instagram.com/lililiil_jh/'>lililiil_jh</a>
-                                </td>
-                                <td>
-                                    <a href='https://velog.io/@leitmotif/'>velog.io/@leitmotif</a>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class='techStackBarContainer'>
+                        <h2>Technical Stacks</h2>
+                        <p></p>
+                        <div id='techStackBar'>
+                            <table id='techStackTable'>
+                                <tr id='techStackTableChild0'>
+                                    <th>
+                                        React
+                                    </th>
+                                    <th>
+                                        Node.js
+                                    </th>
+                                    <th>
+                                        GSAP
+                                    </th>
+                                    <th>
+                                        Database
+                                    </th>
+                                </tr>
+                                <tr id='techStackTableChild1'>
+                                    <td>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
+                                    </td>
+                                    <td>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%">Begin</div>
+                                    </td>
+                                   
+                                </tr>   
+                                <tr id='techStackTableChild2'>
+                                    <td>
+                                        Can apply external APIs. Can use Hooks. Beginner in Redux.
+                                    </td>
+                                    <td>
+                                        Can open server, connect to FE, DB
+                                    </td>
+                                    <td>
+                                        MySQL, MongoDB(Mongoose)
+                                    </td>
+                                    <td>
+                                        Can use simple animate.
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr class='distHR2' id='distHR2'>
+                <div class='recordArea' id='recordArea'>
+                    <div class='recordListContainer'>
+                        <div class='recordLeftList'>
+                            <div class='recordList'>
+                                <h2>2021</h2>
+                                <ul>
+                                    <li>
+                                        <p>2021.10.20</p>
+                                        <span>WECODE 28th WeStudy</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.07.10</p>
+                                        <span>Engineer Information Processing Certif Passed</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.06.25</p>
+                                        <span>SQL Developer Certif Passed</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.04.28</p>
+                                        <span>BOLLORE LOGISTICS KOREA Temp Help contract expired</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.03.22</p>
+                                        <span>BOLLORE LOGISTICS KOREA Help Contracted </span>
+                                    </li>
+                                    <li>
+                                        <p>2021.03.14</p>
+                                        <span>TOEIC 915 Scored</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.02.26</p>
+                                        <span>DHL Supply Chain Korea Leaved</span>
+                                    </li>
+                                    <li>
+                                        <p>2021.01.04</p>
+                                        <span>DHL Supply Chain Korea Contracted</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class='recordList'>
+                                <h2>2020</h2>
+                                <ul>
+                                    <li>
+                                        <p>2020.12.31</p>
+                                        <span>BOLLORE LOGISTICS KOREA Leaved</span>
+                                    </li>
+                                    <li>
+                                        <p>2020.02.21</p>
+                                        <span>Bachelor of Computer Science, University Of Seoul</span>
+                                    </li>
+                                    <li>
+                                        <p>2020.02.14</p>
+                                        <span>BOLLORE LOGISTICS KOREA Contracted</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class='recordList'> 
+                                <h2>2019</h2>
+                                <ul>
+                                    <li>
+                                        <p>2019.04.05</p>
+                                        <span>Linux Master 2nd Certif Passed</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class='recordRightList'>
+                            <div class='recordList'>
+                                <h2>2018</h2>
+                                <ul>
+                                    <li>
+                                        <p>2018.12.31</p>
+                                        <span>University Credit All Passed</span>
+                                    </li>
+                                    <li>
+                                        <p>2018.12.28</p>
+                                        <span>Analyze Data semi-Professional Certif Passed</span>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class='recordList'>
+                                <h2>2017</h2>
+                                <ul>
+                                    <li>
+                                       <p>2017.02.08</p>
+                                       <span>Transfer to University Of Seoul</span>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class='recordList'>
+                                <h2>2016</h2>
+                                <ul>
+                                    <li>
+                                        <p>2016.08.28</p>
+                                        <span>TOEIC 945 Scored</span>
+                                    </li>
+                                    <li>
+                                        <p>2016.03.24</p>
+                                        <span>Be discharged from military service</span>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class='recordList'>
+                                <h2>2013</h2>
+                                <ul>
+                                    <li>
+                                        <p>2013.02.28</p>
+                                        <span>Admission to Hansung Univ. </span>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class='distHR3' id='distHR3'>
+                <div class='openFooterContainer'>
+                    <div class='openFooter' onmouseenter='openFooterModal()' onmouseleave='leaveFooterModal()' onclick={openFooterFunc()}>
+                        <i class="fas fa-angle-double-up" id='openArrow'></i>
+                    </div>
+                    <div class='openFooterText'>
+                        <span>Get More Information!</span>
+                    </div>
+                    <div class='footer'>
+                        <i class="fas fa-angle-double-down" id='closeArrow' onclick='closeFooterFunc()'></i>
+                        <div class='footerContent'>
+                            <h2> Come to my GitHub!</h2>
+                            <hr>
+                            <img src='../images/github_logo.png'>
+                            <span><a href='https://github.com/KimJeongHyun'>https://github.com/KimJeongHyun</a></span>
+                            <br><br>
+                            <p>Follow and star gives me motivation.</p>
+                            <p>Feel free to advice my projects!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class='distHR' id='distHR'>
-            <div class='techStackArea' id='techStackArea'>
-                <div class='techStackImage'>
-                    <img src='../images/brain.png'>
-                    <hr>
-                </div>
-                <div class='techStackBarContainer'>
-                    <h2>Technical Stacks</h2>
-                    <p></p>
-                    <div id='techStackBar'>
-                        <table id='techStackTable'>
-                            <tr id='techStackTableChild0'>
-                                <th>
-                                    React
-                                </th>
-                                <th>
-                                    Node.js
-                                </th>
-                                <th>
-                                    GSAP
-                                </th>
-                                <th>
-                                    Database
-                                </th>
-                            </tr>
-                            <tr id='techStackTableChild1'>
-                                <td>
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
-                                </td>
-                                <td>
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
-                                </td>
-                                <td>
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">Intermediate</div>
-                                </td>
-                                <td>
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%">Begin</div>
-                                </td>
-                               
-                            </tr>   
-                            <tr id='techStackTableChild2'>
-                                <td>
-                                    Can apply external APIs. Can use Hooks. Beginner in Redux.
-                                </td>
-                                <td>
-                                    Can open server, connect to FE, DB
-                                </td>
-                                <td>
-                                    MySQL, MongoDB(Mongoose)
-                                </td>
-                                <td>
-                                    Can use simple animate.
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <hr class='distHR2' id='distHR2'>
-            <div class='recordArea' id='recordArea'>
-                <div class='recordListContainer'>
-                    <div class='recordLeftList'>
-                        <div class='recordList'>
-                            <h2>2021</h2>
-                            <ul>
-                                <li>
-                                    <p>2021.10.20</p>
-                                    <span>WECODE 28th WeStudy</span>
-                                </li>
-                                <li>
-                                    <p>2021.07.10</p>
-                                    <span>Engineer Information Processing Certif Passed</span>
-                                </li>
-                                <li>
-                                    <p>2021.06.25</p>
-                                    <span>SQL Developer Certif Passed</span>
-                                </li>
-                                <li>
-                                    <p>2021.04.28</p>
-                                    <span>BOLLORE LOGISTICS KOREA Temp Help contract expired</span>
-                                </li>
-                                <li>
-                                    <p>2021.03.22</p>
-                                    <span>BOLLORE LOGISTICS KOREA Help Contracted </span>
-                                </li>
-                                <li>
-                                    <p>2021.03.14</p>
-                                    <span>TOEIC 915 Scored</span>
-                                </li>
-                                <li>
-                                    <p>2021.02.26</p>
-                                    <span>DHL Supply Chain Korea Leaved</span>
-                                </li>
-                                <li>
-                                    <p>2021.01.04</p>
-                                    <span>DHL Supply Chain Korea Contracted</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class='recordList'>
-                            <h2>2020</h2>
-                            <ul>
-                                <li>
-                                    <p>2020.12.31</p>
-                                    <span>BOLLORE LOGISTICS KOREA Leaved</span>
-                                </li>
-                                <li>
-                                    <p>2020.02.21</p>
-                                    <span>Bachelor of Computer Science, University Of Seoul</span>
-                                </li>
-                                <li>
-                                    <p>2020.02.14</p>
-                                    <span>BOLLORE LOGISTICS KOREA Contracted</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class='recordList'> 
-                            <h2>2019</h2>
-                            <ul>
-                                <li>
-                                    <p>2019.04.05</p>
-                                    <span>Linux Master 2nd Certif Passed</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class='recordRightList'>
-                        <div class='recordList'>
-                            <h2>2018</h2>
-                            <ul>
-                                <li>
-                                    <p>2018.12.31</p>
-                                    <span>University Credit All Passed</span>
-                                </li>
-                                <li>
-                                    <p>2018.12.28</p>
-                                    <span>Analyze Data semi-Professional Certif Passed</span>
-                                </li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class='recordList'>
-                            <h2>2017</h2>
-                            <ul>
-                                <li>
-                                   <p>2017.02.08</p>
-                                   <span>Transfer to University Of Seoul</span>
-                                </li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class='recordList'>
-                            <h2>2016</h2>
-                            <ul>
-                                <li>
-                                    <p>2016.08.28</p>
-                                    <span>TOEIC 945 Scored</span>
-                                </li>
-                                <li>
-                                    <p>2016.03.24</p>
-                                    <span>Be discharged from military service</span>
-                                </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class='recordList'>
-                            <h2>2013</h2>
-                            <ul>
-                                <li>
-                                    <p>2013.02.28</p>
-                                    <span>Admission to Hansung Univ. </span>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class='topBtn'>
+            <i class="fas fa-arrow-circle-up" id='topArrow' onclick="moveToProfile()"></i>
+        </div>
+        <div class='customScrollBarWrapping'>
+            <div class='customScrollBarContainer'>
+                <div class='customScrollBar'></div>
             </div>
         </div>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src='../js/LandingJS.js'></script>
-    
 </html>
 
 
