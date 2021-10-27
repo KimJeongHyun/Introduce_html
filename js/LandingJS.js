@@ -1,26 +1,3 @@
-// Navbar functions
-
-const profileElem = document.getElementById('profileArea')
-const skillsElem = document.getElementById('distHR')
-const recordsElem = document.getElementById('distHR2')
-
-const moveToProfile = () =>{
-    profileElem.scrollIntoView({behavior:"smooth"});
-}
-
-const moveToSkills = () =>{
-    skillsElem.scrollIntoView({behavior:"smooth"});
-}
-
-const moveToRecords = () =>{
-    recordsElem.scrollIntoView({behavior:"smooth"});
-}
-
-const refresh = () =>{
-    window.location.reload();
-}
-
-
 // loading circle progress bar
 
 const bar = document.querySelector('.bar')
@@ -46,68 +23,6 @@ var observer = new MutationObserver(function(mutations){
 
 
 observer.observe(bar,{attributes:true,attributeFilter:['style']})
-
-// window scroll event
-
-const topBtn = document.querySelector('.topBtn');
-const openFooter = document.querySelector('.openFooter')
-
-
-document.addEventListener('scroll',function(){
-    if (window.outerHeight*0.7<window.scrollY){
-        gsap.to(topBtn,{opacity:1,display:'',duration:0.5})
-    }else{
-        gsap.to(topBtn,{opacity:0,display:'none',duration:0.5})
-    }
-})
-
-const scrollTween = gsap.to(".customScrollBar", {yPercent: 800, ease: "none", paused: true});
-
-function updateScrollBar() {
-  scrollTween.progress(scrollY / (document.body.scrollHeight - innerHeight));
-}
-window.addEventListener("resize", updateScrollBar);
-window.addEventListener("scroll", updateScrollBar);
-
-// openFooter modal
-
-const openFooterText = document.querySelector('.openFooterText')
-
-const openFooterModal = () =>{
-    console.log('hi!')
-    openFooterText.style.opacity='1'
-    openFooter.style.top='0px'
-    openFooterText.style.top='0px'
-}
-
-const leaveFooterModal = () =>{
-    console.log('bye!');
-    openFooterText.style.opacity='0'
-    openFooter.style.top='15px'
-    openFooterText.style.top='15px'
-}
-
-// openFooter func
-
-const footer = document.querySelector('.footer')
-
-const openFooterFunc = async () =>{
-   footer.style.display='block';
-   openFooter.style.opacity='0';
-   openFooter.style.display='none';
-   openFooterText.style.display='none';
-   await gsap.to(footer,{top:'30px',opacity:'1',height:'300px',duration:0.5})
-   footer.scrollIntoView({behavior:"smooth"})
-   
-}
-
-const closeFooterFunc = async () =>{
-    await gsap.to(footer,{opacity:'0', top:'0', duration:0.5})
-    await document.querySelectorAll('.recordList')[4].scrollIntoView({behavior:'smooth'})
-    gsap.to(footer,{display:'none'})
-    gsap.to(openFooter,{opacity:'1',display:'', duration:1})
-    gsap.to(openFooterText,{display:'',duration:1})
-}
 
 
 // async X await gsap animate
