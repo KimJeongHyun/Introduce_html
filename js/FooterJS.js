@@ -33,7 +33,7 @@ const openFooterFunc = async () =>{
 
 const closeFooterFunc = async () =>{
     await gsap.to(footer,{opacity:'0', top:'0', duration:0.5})
-    await document.querySelectorAll('.recordList')[4].scrollIntoView({behavior:'smooth'})
+    await document.querySelectorAll('.recordList')[3].scrollIntoView({behavior:'smooth'})
     gsap.to(footer,{display:'none'})
     gsap.to(openFooter,{opacity:'1',display:'', duration:1})
     gsap.to(openFooterText,{display:'',duration:1})
