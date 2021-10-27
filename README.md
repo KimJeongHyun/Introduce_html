@@ -38,14 +38,6 @@
 
 ---
 
-개선점
-  * background image
-    > not essential.
-  * JS modulization
-    > seperate JS functions. (Global vs Local)
-
----
-
 유저 시나리오
 
 1. Wait loading (3s)
