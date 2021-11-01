@@ -60,7 +60,7 @@ async function worker(){
     await gsap.to('.loadingDot1',{opacity:1,duration:1.0})
     await gsap.to('.loadingDot2',{opacity:1,duration:1.0})
     await gsap.to('.loadingDot3',{opacity:1,duration:1.0})  
-    await gsap.to('.loadingDiv',{opacity:0,display:'none',autoAlpha:1,duration:1})
+    await gsap.to('.loadingDiv',{display:'none',autoAlpha:0,duration:1})
     await gsap.to('.rootDiv',{display:'block',autoAlpha:1, duration:1})
     await gsap.to('#profileImage, .customScrollBarWrapping',{opacity:1,duration:1})
     await gsap.to('#profileMe',{opacity:1,duration:1})
